@@ -1,7 +1,7 @@
 ## YAML Template.
 ---
 hello:
-  path: '/say_hello'
+  path: '/say_hello/{page}'
   defaults:
     _title: 'Premier Module'
     _controller: '\Drupal\hello\Controller\HelloController::content'

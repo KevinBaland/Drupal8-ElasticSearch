@@ -9,7 +9,8 @@ use Drupal\Core\Controller\ControllerBase;
 
 
 class HelloController extends ControllerBase {
-  public function content() {
+    
+  public function content($page) {
     return array(
         '#markup' => '' . t('Hello there! ') . '',
     );
