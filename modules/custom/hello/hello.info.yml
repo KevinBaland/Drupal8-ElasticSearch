@@ -1,0 +1,6 @@
+## YAML Template.
+---
+name: Hello
+type: module
+description: Hello demo module.
+core: 8.3.5

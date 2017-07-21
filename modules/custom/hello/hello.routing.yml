@@ -1,0 +1,9 @@
+## YAML Template.
+---
+hello:
+  path: '/say_hello'
+  defaults:
+    _title: 'Premier Module'
+    _controller: '\Drupal\hello\Controller\HelloController::content'
+  requirements:
+    _permission: 'access content'
