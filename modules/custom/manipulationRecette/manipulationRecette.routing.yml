@@ -4,7 +4,7 @@
 manipulationRecette:
   path: '/test-affichage-recette'
   defaults:
-    _title: 'Test Recette'
+    _title: 'Affichage 1 recette'
     _controller: '\Drupal\manipulationRecette\Controller\ManipulationRecetteController::content'
   requirements:
     _permission: 'access content'
@@ -20,7 +20,15 @@ manipulationRecette.viewAll:
 manipulationRecette.pagination:
   path: '/test-affichage-recette/page/{page}'
   defaults:
-    _title: 'Affichage All Recette'
+    _title: 'Test Pagination Recette (2 recettes par page)'
     _controller: '\Drupal\manipulationRecette\Controller\ManipulationRecetteController::page'
+  requirements:
+    _permission: 'access content'
+    
+manipulationRecette.update:
+  path: '/test-affichage-recette/update'
+  defaults:
+    _title: 'Test update 1 recette'
+    _controller: '\Drupal\manipulationRecette\Controller\ManipulationRecetteController::update'
   requirements:
     _permission: 'access content'

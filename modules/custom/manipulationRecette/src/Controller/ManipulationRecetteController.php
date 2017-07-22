@@ -50,7 +50,7 @@ class ManipulationRecetteController extends ControllerBase {
         return $render_array;
     }
     
-    //Affiche 2 Recette par page.
+    //Affiche de 2 Recettes par page.
     public function page($page){
         
         //Recuperation de la listes des nodes ids.
@@ -70,5 +70,24 @@ class ManipulationRecetteController extends ControllerBase {
         }
         
         return $render_array;
+    }
+    
+    public function update(){
+        
+        //Recuperation de la listes des nodes ids
+        $nodeIds = \Drupal::entityQuery('node')
+        ->condition('type', 'recette')
+        ->execute();
+        
+        //Recuperation manuel d'une node a partir de la liste de nodes ids.
+        $node = Node::load($nodeIds['3']);
+        
+        //Modification du champ 'nombre de personne'
+        $node->set('field_nombre_de_personne', 4);
+        
+        //Sauvegarde de la modification
+        $node->save();
+        
+        return node_view($node);
     }
 }
