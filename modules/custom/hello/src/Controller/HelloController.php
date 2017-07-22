@@ -12,7 +12,7 @@ class HelloController extends ControllerBase {
     
   public function content($page) {
     return array(
-        '#markup' => '' . t('Hello there! ') . '',
+        '#markup' => '' . t('Hello there! page :  '.$page) . '',
     );
   }
 }
