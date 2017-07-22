@@ -16,3 +16,11 @@ manipulationRecette.viewAll:
     _controller: '\Drupal\manipulationRecette\Controller\ManipulationRecetteController::view_all'
   requirements:
     _permission: 'access content'
+    
+manipulationRecette.pagination:
+  path: '/test-affichage-recette/page/{page}'
+  defaults:
+    _title: 'Affichage All Recette'
+    _controller: '\Drupal\manipulationRecette\Controller\ManipulationRecetteController::page'
+  requirements:
+    _permission: 'access content'
