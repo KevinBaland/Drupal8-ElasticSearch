@@ -32,3 +32,11 @@ manipulationRecette.update:
     _controller: '\Drupal\manipulationRecette\Controller\ManipulationRecetteController::update'
   requirements:
     _permission: 'access content'
+
+manipulationRecette.create:
+  path: '/test-affichage-recette/create'
+  defaults:
+    _title: 'Test create 1 recette'
+    _controller: '\Drupal\manipulationRecette\Controller\ManipulationRecetteController::create_recette'
+  requirements:
+    _permission: 'access content'

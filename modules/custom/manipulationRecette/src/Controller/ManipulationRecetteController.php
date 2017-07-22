@@ -90,4 +90,46 @@ class ManipulationRecetteController extends ControllerBase {
         
         return node_view($node);
     }
+    
+    //Fonction pour creer une recette directement depuis le controller
+    public function create_recette(){
+        
+        //Création d'une nouvelle node avec comme type Recette
+        $node = Node::create([
+          'type' => 'recette',
+          'title'=> "test Recette"
+          ]);
+        
+        //Set le body du titre
+        $node->set('body',"Preparation : 1min \n Cuisson : 1h");
+        
+        //Set le nombre de personne
+        $node->set('field_nombre_de_personne',5);
+        
+        //Set les différentes instructions de preparations
+        $node->set('field_instructions',[
+          "Instruction 1",
+          "Instruction 2",
+          "Instruction 3"
+        ]);
+        
+        //Cas un peu particulier, ici on set la valeur a 3 afin de faire reference a la taxonomie 3 qui represente les entrées
+        $node->set('field_type_de_recette',[
+          ['target_id'=>3]
+        ]);
+        
+        //Set la liste des ingrédients.
+        $node->set('field_ingredients',[
+          "sucre",
+          "poivre",
+          "sel"
+        ]);
+       
+        //Sauvegarde de la node
+        $node->save();
+        
+        return array(
+        '#markup' => '' . t('Recette crée') . '',
+    );
+    }
 }
