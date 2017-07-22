@@ -8,3 +8,11 @@ manipulationRecette:
     _controller: '\Drupal\manipulationRecette\Controller\ManipulationRecetteController::content'
   requirements:
     _permission: 'access content'
+    
+manipulationRecette.viewAll:
+  path: '/test-affichage-recette/all'
+  defaults:
+    _title: 'Affichage All Recette'
+    _controller: '\Drupal\manipulationRecette\Controller\ManipulationRecetteController::view_all'
+  requirements:
+    _permission: 'access content'

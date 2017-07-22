@@ -23,8 +23,27 @@ class ManipulationRecetteController extends ControllerBase {
         
         //Recupere la vue de la node selectionnée.
         $render = node_view($node);
-        
 
         return $render;
+    }
+    
+    public function view_all() {
+     
+        //Recuperation de la listes des nodes ids.
+        $nodeIds = \Drupal::entityQuery('node')
+        ->condition('type', 'recette')
+        ->execute();
+        
+        //Recuperation des nodes correspondant a la liste des nodes ids.
+        $nodes = Node::loadMultiple($nodeIds);
+        
+        //Tableau contenant la vue de chaque recette.
+        $render_array = [];
+        
+        foreach ($nodes as $node) {
+            $render_array[] = node_view($node);
+        }
+        
+        return $render_array;
     }
 }
