@@ -1,0 +1,10 @@
+## YAML Template.
+---
+
+manipulationRecette:
+  path: '/test-affichage-recette'
+  defaults:
+    _title: 'Test Recette'
+    _controller: '\Drupal\manipulationRecette\Controller\ManipulationRecetteController::content'
+  requirements:
+    _permission: 'access content'

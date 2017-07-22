@@ -1,0 +1,6 @@
+## YAML Template.
+---
+name: Manipulation Recette
+type: module
+description: test de manipulation du content recette.
+core: 8.x
