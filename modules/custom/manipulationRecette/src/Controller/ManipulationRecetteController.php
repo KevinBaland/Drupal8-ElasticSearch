@@ -128,8 +128,9 @@ class ManipulationRecetteController extends ControllerBase {
         //Sauvegarde de la node
         $node->save();
         
-        return array(
-        '#markup' => '' . t('Recette crée') . '',
-    );
+        //Recuperation de l'objet
+        $node = Node::load($node->id());
+        
+        return node_view($node);
     }
 }
