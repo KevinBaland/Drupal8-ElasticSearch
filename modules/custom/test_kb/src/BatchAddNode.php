@@ -44,7 +44,7 @@ class BatchAddNode {
             $node->set('field_changeur_de_monnaie', $element['fields']['changeur_de_monnaie'] == "Oui" ? true : false);
             $node->set('field_code_postal', $element['fields']['code_postal']);
 
-            //Vérification du departement dans la taxonomie, si il n'y est pas l'ajoute.
+            //Verification du departement dans la taxonomie, si il n'y est pas l'ajoute.
             if (!array_key_exists($element['fields']['dept'], $arrayTaxoPoste)) {
                 $idTerm = BatchAddNode::addTaxonomiePoste($element['fields']['dept']);
                 $arrayTaxoPoste[$element['fields']['dept']] = $idTerm;

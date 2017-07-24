@@ -47,7 +47,7 @@ class ImportForm extends FormBase{
         //Attribution du contenu du fichier a la variable contents
         $contents = file_get_contents($filename);
         
-        //Tranformation du contenur (String) en tableau json.
+        //Tranformation du contenu (String) en tableau json.
         $json_array = json_decode($contents,true);
         
         //Split du tableau en groupe de 10 elements
