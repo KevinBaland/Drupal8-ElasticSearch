@@ -1,0 +1,7 @@
+## YAML Template.
+---
+
+name: Test Kevin Baland
+type: module
+description: Test Drupal et ElasticSearch.
+core: 8.x

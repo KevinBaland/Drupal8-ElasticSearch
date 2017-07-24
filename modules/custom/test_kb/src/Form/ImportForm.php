@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\manipulationRecette\Form;
+namespace Drupal\test_kb\Form;
 
 use Drupal\Core\Form\FormBase;
 
@@ -47,9 +47,32 @@ class ImportForm extends FormBase{
         //Attribution du contenu du fichier a la variable contents
         $contents = file_get_contents($filename);
         
-        //Affichage du Contenu
-        drupal_set_message($contents);
+        //Tranformation du contenur (String) en tableau json.
+        $json_array = json_decode($contents,true);
+        
+        //Split du tableau en groupe de 10 elements
+        $jsonSplit = array_chunk($json_array, 10);
+        
+        //Creation du tableau pour le process du batch
+        $operations  = [];
+        foreach($jsonSplit as $postChunk){
+            $operations[] = array(
+                '\Drupal\test_kb\BatchAddNode::addNodes',
+                array($postChunk)
+            );
+        }
+        
+        //Definition du tableau pour le batch
+        $batch = array(
+            'title' => 'Add Node...',
+            'operations' => $operations,
+            'finished' => '\Drupal\test_kb\BatchAddNode::addNodeFinishedCallback',
+          );
+        
+        //Lancement du Batch
+        batch_set($batch);
     }
 
+    
 }
 

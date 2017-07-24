@@ -1,0 +1,11 @@
+## YAML Template.
+---
+
+test_kb.upload:
+  path: '/test-kb/upload'
+  defaults:
+    _title: 'Upload Json'
+    _form: '\Drupal\test_kb\Form\ImportForm'
+  requirements:
+    _permission: 'access content'
+    
