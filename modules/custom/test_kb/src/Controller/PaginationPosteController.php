@@ -14,7 +14,7 @@ class PaginationPosteController extends ControllerBase{
     
     public function pagination($dept,$page){
 
-        //Recuperation de la liste des ids des Term correspondant a Departement
+        //Recuperation de la liste des ids des Term correspondant a Departement avec le nom du departement souhaité
         $query = \Drupal::entityQuery('taxonomy_term');
         $query->condition('vid', "departement");
         $query->condition('name', $dept);
