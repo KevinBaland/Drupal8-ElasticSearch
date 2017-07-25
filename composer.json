@@ -5,7 +5,8 @@
     "license": "GPL-2.0+",
     "require": {
         "composer/installers": "^1.0.24",
-        "wikimedia/composer-merge-plugin": "~1.4"
+        "wikimedia/composer-merge-plugin": "~1.4",
+        "nodespark/des-connector": "dev-master"
     },
     "replace": {
         "drupal/core": "~8.3"
@@ -26,7 +27,8 @@
         ],
         "merge-plugin": {
             "include": [
-                "core/composer.json"
+                "core/composer.json",
+				"modules/elasticsearch_connector/composer.json"
             ],
             "recurse": false,
             "replace": false,
