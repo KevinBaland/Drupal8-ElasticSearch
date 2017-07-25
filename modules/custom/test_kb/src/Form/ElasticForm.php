@@ -5,7 +5,6 @@ namespace Drupal\test_kb\Form;
 use Drupal\Core\Form\FormBase;
 use Drupal\elasticsearch_connector\Entity\Cluster;
 use Drupal\node\Entity\Node;
-use Drupal\taxonomy\Entity\Term;
 
 class ElasticForm extends FormBase {
 

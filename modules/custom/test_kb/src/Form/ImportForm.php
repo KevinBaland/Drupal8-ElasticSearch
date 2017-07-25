@@ -73,6 +73,5 @@ class ImportForm extends FormBase{
         batch_set($batch);
     }
 
-    
 }
 
